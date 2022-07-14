@@ -40,7 +40,7 @@ public class GamblingStimulation {
 
             if (dailyStake > 100) {
                 totalAmountWonFor20days += 50;
-                //dayWonCount++;
+               // dayWonCount++;
                 if (dailyStake > wonMax) {
                     wonMax = dailyStake;
                     luckyDay = day;
@@ -75,12 +75,29 @@ public class GamblingStimulation {
             }
 
 
+    static void WantToContinue()
+    {
+        while (true)
+        {
+            Scanner sc=new Scanner(System.in);
+            System.out.println("Enter('y' or 'Y') to continue playing the game ");
+            char op=sc.next().charAt(0);
+            if(op=='y' || op=='Y')
+            {
+                dayNumber();
+            }
+            else {
+                break;
+            }
+        }
+    }
 
 
 
     public static void main(String[] args) {
         System.out.println("Welcome To Gambling Simulator");
         dayNumber();
+        WantToContinue();
 
     }
 
